@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>My Friends</h1>
+
+    <!-- conditional statements in jinja -->
+    {% if number > 10 %}
+    <p>{{number}} is greater than 10 </p>
+    {% else %}
+    <p>{{number}} is smaller than 10 </p>
+    {% endif %}
+
+    
+    <!-- loop statement in jinja -->
+    {% for f in my_friends %}       <!--writing python code in jinja-->
+        <h2>{{f}}</h2>                       <!--//variable in {}-->
+    {% endfor %}                    <!--ending the for loop bcoz no need of indentation-->
+</body>
+</html>
