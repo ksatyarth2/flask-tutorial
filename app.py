@@ -2,11 +2,16 @@ from flask import Flask, render_template, redirect
 
 #__name__==__main__
 app = Flask(__name__) #creating the instance of flask and passing the module __name__ 
+
+friends = ["John","Tom", "Carry", "Jason"]      
+number=15
+
+
                     # @ is the decorator in python
 @app.route('/')     #routes-> just like different url paths and used for handling the different urls
                     #('/') is the home address
 def hello():               #execute this function when home address is accessed
-    return render_template("index.html")    #to return a html page which is created inside of template folder
+    return render_template("index.html", my_friends = friends, number = number)    #to return a html page which is created inside of template folder
 
 @app.route("/about")    #creating the route for "/about" address
 def about():
