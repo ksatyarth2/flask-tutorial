@@ -27,6 +27,9 @@ def submit_data():
         name = request.form['username']        #taking value from the form
         age = int(request.form['age'])          #taking integer value from the form
 
+        f = request.files['userfile']           #file will be created in another dict 'files' unlike in other form field which is dict 'form'
+        print(f)
+        f.save(f.filename)                      #file have function to save the file. filename is used to save the file name with the original name of the file uploaded and location will be root folder
     return "<h1> Hello {} and your age is {}".format(name,age)         #printing the value from username and age
 
 

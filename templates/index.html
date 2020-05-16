@@ -29,10 +29,12 @@
             4. use post for credential 
                 -->
 
-
-    <form method="POST" action="/submit">
+<!-- in flask, to send files to server or working with files you need to pass a parameter enctype="mutipart/form-data" -->
+    <form method="POST" action="/submit" enctype="multipart/form-data">
         <input type="text" name="username" placeholder="Enter the username">
         <input type="text" name="age" placeholder="Enter the age">
+        <input type="file" name="userfile">
+
         <input type="submit">
 
     </form>
