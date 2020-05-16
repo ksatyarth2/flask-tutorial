@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 
 #__name__==__main__
 app = Flask(__name__) #creating the instance of flask and passing the module __name__ 
@@ -20,6 +20,14 @@ def about():
 @app.route('/home')         #creating route for redirecting to home page when "/home" is accessed
 def home():
     return redirect('/')     #simply pass the address where you want to redirect
+
+@app.route('/submit', methods = ['POST'])   #creating route for /submit address with POST method. In above cases GET is not passed bcoz it is already passed by defualt
+def submit_data():
+    if request.method == 'POST':                #handling methods and form functions using request function by importing it
+        name = request.form['username']        #taking value from the form
+        age = int(request.form['age'])          #taking integer value from the form
+
+    return "<h1> Hello {} and your age is {}".format(name,age)         #printing the value from username and age
 
 
 if __name__ == '__main__':

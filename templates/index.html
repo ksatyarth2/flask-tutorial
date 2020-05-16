@@ -12,10 +12,31 @@
     <p>{{number}} is smaller than 10 </p>
     {% endif %}
 
-    
+
     <!-- loop statement in jinja -->
     {% for f in my_friends %}       <!--writing python code in jinja-->
         <h2>{{f}}</h2>                       <!--//variable in {}-->
     {% endfor %}                    <!--ending the for loop bcoz no need of indentation-->
+
+
+
+    <!-- html methods 
+        GET and POST
+            1.Post is most secure and get is less secure
+            2. get uses only 256 character
+            3. get send data in query string 
+                    like flipkart.com/?username="fgfgfgf"&password="fgfg" 
+            4. use post for credential 
+                -->
+
+
+    <form method="POST" action="/submit">
+        <input type="text" name="username" placeholder="Enter the username">
+        <input type="text" name="age" placeholder="Enter the age">
+        <input type="submit">
+
+    </form>
+    
+
 </body>
 </html>
